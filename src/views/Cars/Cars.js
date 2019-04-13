@@ -14,7 +14,6 @@ class Cars extends React.Component {
   componentDidMount() {
     carServices.getCars()
       .then(result => {
-        // console.log(result);
         this.setState({data: result});
       })
   }
@@ -23,8 +22,8 @@ class Cars extends React.Component {
     return (
       <div>
         {
-          this.state.data.map(item => {
-            return <Card {...item}/>
+          this.state.data.map((item, index) => {
+            return <Card key={index} {...item}/>
           })
         }
       </div>
