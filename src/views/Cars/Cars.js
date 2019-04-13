@@ -18,15 +18,19 @@ class Cars extends React.Component {
       })
   }
 
+
   render() {
     return (
-      <div>
-        {
-          this.state.data.map((item, index) => {
-            return <Card key={index} {...item}/>
-          })
-        }
+      <div className="container">
+        <div className={"row d-flex"}>
+          {
+            this.state.data.map((item, index) => {
+              return <Card key={index} {...item}/>
+            })
+          }
+        </div>
       </div>
+
     )
   }
 }
